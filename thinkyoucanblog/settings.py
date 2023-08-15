@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'mrekyle.herokuapp.com', '8000-mrekyle-ci-think-you-can-s56qvjht4j.us2.codeanyapp.com']
+    os.environ.get('ALLOWED_URL'), '8000-mrekyle-ci-think-you-can-s56qvjht4j.us2.codeanyapp.com']
 
 
 # Application definition
