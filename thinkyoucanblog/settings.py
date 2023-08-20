@@ -16,6 +16,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -32,6 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_URL'), os.environ.get('LOCAL_HOST')]
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Application definition
 
@@ -128,6 +130,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+# IMPORTANT FOR FINDING STATIC FILES IN THE APPLICATION SUCH AS THE CSS
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
